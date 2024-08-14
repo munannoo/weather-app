@@ -1,18 +1,20 @@
 import { useState } from "react";
 
-export default function Search() {
-  const [search, setSearch] = useState(null);
+export default function Search({ search, setSearch, handleSearch }) {
   return (
     <div className="search-engine">
-      Search
+      <h3 className="font-bold mb-2">Search for the city</h3>
       <input
         type="text"
-        className="search-city"
+        className="p-3 py-2 rounded-lg mr-2"
         placeholder="Enter a city name"
         name="search"
         value={search}
         onChange={(event) => setSearch(event.target.value)}
       />
+      <button onClick={handleSearch} className="p-3 py-2 rounded-lg">
+        Submit
+      </button>
     </div>
   );
 }
