@@ -33,6 +33,10 @@ export default function Weather() {
     fetchWeatherData(search);
   }
 
+  function getCurrentDate() {
+    return new Date();
+  }
+
   return (
     <div className="bg-lime-700 p-4 rounded-lg">
       <h1 className="font-bold mb-4">Weather App</h1>
@@ -42,6 +46,29 @@ export default function Weather() {
         handleSearch={handleSearch}
       />
       {loading ? <p>loading data pls wait...</p> : null}
+
+      <div>
+        {weatherData ? (
+          <div>
+            Results for <span className="font-bold">{weatherData.name}</span>
+            <p className="date">
+              {getCurrentDate().getDate() +
+                "/" +
+                getCurrentDate().getMonth() +
+                "/" +
+                getCurrentDate().getFullYear()}
+            </p>
+            <div className="weather-details">
+              <p className="description">
+                {weatherData?.weather[0]?.description}
+              </p>
+              <p className="temp">{weatherData?.main?.temp}</p>
+              <p className="win">{weatherData?.wind?.speed}</p>
+              <p className="humidity">{weatherData?.main?.humidity}</p>
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
