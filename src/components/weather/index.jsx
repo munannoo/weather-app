@@ -47,7 +47,7 @@ export default function Weather() {
   ];
 
   return (
-    <div className="bg-lime-700 p-4 rounded-lg">
+    <div className="bg-lime-700 p-4 rounded-lg mt-20">
       <h1 className="font-bold mb-4">Weather App</h1>
       <Search
         search={search}

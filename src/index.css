@@ -17,7 +17,7 @@
     text-decoration: inherit;
   }
   body {
-    @apply flex place-items-center min-w-[320px] min-h-screen m-0;
+    @apply flex justify-center min-w-[320px] min-h-screen m-0;
   }
   h1 {
     @apply text-[3.2em] leading-[1.1];
